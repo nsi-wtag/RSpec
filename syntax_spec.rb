@@ -2,7 +2,7 @@ RSpec.describe User, type: :model do
   let(:user_with_last_name) { User.create(first_name: "James", last_name: "Anderson") }
   let(:user_without_last_name) { User.create(first_name: "John") }
 
-  describe "#full_name"
+  describe "#full_name" do
     context "when a user has last_name"
       subject { user_with_last_name.full_name }
 
