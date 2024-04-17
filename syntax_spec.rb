@@ -3,7 +3,7 @@ RSpec.describe User, type: :model do
   let(:user_without_last_name) { User.create(first_name: "John") }
 
   describe "#full_name" do
-    context "when a user has last_name"
+    context "when a user has last_name" do
       subject { user_with_last_name.full_name }
 
       it "returns the user's full_name" do
@@ -11,13 +11,12 @@ RSpec.describe User, type: :model do
       end
     end
 
-    context "when user doesn't have a last_name"
+    context "when user doesn't have a last_name" do
       subject { user_without_last_name.full_name }
 
-      it "returns an error"
+      it "returns an error" do
         expect(subject).to raise_error(UserErrors::InvalidLastName)
       end
     end
   end
 end
-
